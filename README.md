@@ -1,7 +1,8 @@
-#TinXSS
+
 #TinXSS
 TinXSS是一个开源Xss漏洞测试平台
-__TinXSS目录结构__
+```
+TinXSS目录结构
 |-- README.md	# 介绍文档
 |-- LICENSE     # 开源许可证
 |-- xss.sql     # 数据字段SQL文件
@@ -12,6 +13,4 @@ __TinXSS目录结构__
 |-- Tinx        # 核心应用目录
 |-- Temp        # 运行目录
 |-- Theme       # 视图文件
-
-
-
+```
