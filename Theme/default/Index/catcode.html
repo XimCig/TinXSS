@@ -1,0 +1,35 @@
+<include file="Index:Header" />
+<section class="am-panel am-panel-success">
+  <header class="am-panel-hd">
+    <h3 class="am-panel-title">查看代码</h3>
+  </header>
+  <div class="am-panel-bd">
+  <div class="am-g">
+  <div class="col-lg-6 col-md-8 col-sm-centered">
+  
+<form method="post" class="am-form" onsubmit="return yz()" action="{:U('Index/Index/code/?do=add')}">
+    	
+      <label for="poject">项目名:{$poject['name']}</label>
+   
+
+     <div class="am-form-group">
+      <label for="doc-ta-1">调用代码:</label>
+         <input type="text" name="name" id="name" value="{$code['code1']}">
+
+  </div>
+  <div class="am-form-group">
+      <label for="doc-ta-1">百度短网址(坏了的):</label>
+         <input type="text" name="name" id="name" value="{$code['code2']}">
+
+  </div>
+ 	  <div class="am-form-group">
+      <label for="doc-ta-1">代码</label>
+      <textarea class="" rows="5" id="miaoshu">{$Bigcode}</textarea>
+    </div>
+    </form>
+  </div>
+</section>
+
+
+
+<include file="Index:Footer" />

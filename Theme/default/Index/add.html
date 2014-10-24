@@ -1,0 +1,43 @@
+<include file="Index:Header" />
+<script>
+function yz(){
+if($v("name")==""){
+alert("抱歉.名称不能为空");
+return false;
+}
+if($v("miaoshu")==""){
+alert("抱歉.描述不能为空");
+return false;
+}
+if($v("name").length>9){
+alert("名称不能大于9字符");
+return false;
+}
+return true;
+}
+</script>
+<section class="am-panel am-panel-success">
+  <header class="am-panel-hd">
+    <h3 class="am-panel-title">添加项目</h3>
+  </header>
+  <div class="am-panel-bd">
+    
+<div class="am-g">
+  <div class="col-lg-6 col-md-8 col-sm-centered">
+  
+    <form method="post" class="am-form" onsubmit="return yz()" action="{:U('Index/Index/code/?do=add')}">
+    	
+      <label for="poject">项目名:</label>
+      <input type="text" name="name" id="name" value="">
+
+     <div class="am-form-group">
+      <label for="doc-ta-1">描述</label>
+      <textarea class="" rows="5" id="miaoshu"></textarea>
+    </div>
+ <button type="submit" class="am-btn am-btn-success am-btn-block">下一步</button>
+	  
+    </form>
+  </div>
+</section>
+
+<include file="Index:Footer" />

@@ -1,0 +1,35 @@
+<include file="Index:Header" />
+
+<div class="am-alert am-alert-success" data-am-alert>
+  <button type="button" class="am-close">&times;</button>
+  <p>Xss漏洞安全测试平台-希望你是个白帽子 <a href="{:U("Index/add")}"><font color="#0033FF">创建项目</font></a></p>
+</div>
+
+<div class="am-panel am-panel-success">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">项目列表</h3>
+  </div>
+  <table class="am-table am-table-bd am-table-bdrs am-table-striped table-layout:fixed" style="table-layout:fixed;">
+  	 <thead>
+<tr> <if condition="$poject">
+	<td align="">项目名称</td>
+	<td align="">数量</td>
+	<td align=""></td>
+	</tr> 
+	</thead>
+	 <tbody>
+	<volist name="po" id="vo">
+	<tr>
+	<td>{$vo.name}</td>
+	<td><a href="{:U("Index/index/showxss")}?pid={$vo.pid}">{$vo.num}</a></td>
+	<td><a href="{:U("Index/index/catcode")}?pid={$vo.pid}">查看代码</a></td>
+	</tr>
+	</volist>
+	</tbody>
+	 </table>
+	 <else />
+	<h2>还没有项目哦！！！</h2>
+	</if>
+  <div class="am-panel-footer"> {:ti(1414136774)}本站开启了邮箱，只要你的邮箱对了，不怕收不到Cookie饼干哦！</div>
+</div>
+<include file="Index:Footer" />

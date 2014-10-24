@@ -1,0 +1,118 @@
+<include file="Public:Header" />
+<title>Reg_Xss</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+</head> 
+<body>
+  	
+  	<style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 200%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+  </style>
+<script>
+
+function biaodan(){
+	<if condition="$regopen neq 0">
+if($v("regcode")==""){
+	alert("抱歉,不能为空");	
+	return false;
+}
+</if>
+if($v("email")==""){
+	alert("抱歉,不能为空");	
+	return false;
+}
+if($v("pwd")==""){
+	alert("抱歉,不能为空");	
+	return false;
+}
+if($v("pwd2")==""){
+	alert("抱歉,不能为空");	
+	return false;
+}
+if($v("yzm")==""){
+	alert("抱歉,不能为空");	
+	return false;
+}
+if($v("pwd")!==$v("pwd2")){
+	alert("抱歉,两次密码不一致");
+	}
+return true;
+} 		
+
+	</script>
+	</head>
+<body>
+
+<div class="header">
+  <div class="am-g">
+    <h1>TinXss</h1>
+  </div>
+  <hr />
+</div>
+<div class="am-g">
+  <div class="col-lg-6 col-md-8 col-sm-centered">
+    <h3>注册</h3>
+    <hr>
+    <form method="post" class="am-form" onsubmit="return biaodan()" action="{:U('Index/Reg/add')}">
+    	 <label for="regcode">邀请码:</label>
+      <input type="text" name="regcode" id="regcode" value="" <if condition="$regopen eq 0">disabled</if>>
+      <br />
+      <label for="email">邮箱:</label>
+      <input type="email" name="email" id="email" value="" onblur="zm();">
+      <br>
+      <label for="password">密码:</label>
+      <input type="password" name="pwd" id="pwd" value="">
+   
+      <br />
+	   <label for="pwd2">密码:</label>
+      <input type="password" name="pwd2" id="pwd2" value="">
+   
+      <br />
+	   <label for="yzm">验证码:</label>
+      <input type="text" name="yzm" id="yzm" value="">
+   
+      <br />
+      <div class="am-cf">
+       <!--  <input type="submit" name="" value="忘记密码 ^_^? " class="am-btn am-btn-default am-btn-sm am-fr"> -->
+    <img title="点击刷新" src="{:U("Index/Verify/indexver")}" alt="验证码" class="am-fl am-img-bdrs" onclick="this.src='{:U("Index/Verify/indexver")}?'+new Date().getTime()";/>
+	<input type="submit" name="" value="注册" class="am-btn am-btn-lg am-btn-danger am-btn-sm am-fr">
+      </div>
+    </form>
+    
+<div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd">账号已经注册！
+      <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+    </div>
+  </div>
+</div>
+    <hr>
+    <p>© 2014 TinXss, Inc. Licensed under MIT license.</p>
+  </div>
+</div>
+<script>
+  function zm(){
+  var zmail=document.getElementById('email');
+  var	murl=new _ajax("{:U("Index/Reg/zemail")}?Zmail="+zmail.value+"");
+  	murl._get();
+  	murl._ok(zz);
+  	}
+  	function zz(re){
+  		if(re !== ""){
+  	$('#doc-modal-1').modal('open');}
+  		}
+
+</script>
+</body>
+
+<include file="Public:Footer" />

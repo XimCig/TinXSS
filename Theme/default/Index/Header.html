@@ -1,0 +1,35 @@
+<include file="Public:Header" />
+<title>Tin_XSS</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+</head> 
+<style>
+  .footer {
+      background: #2d3e50;
+    }
+
+    .footer p {
+      color: #7f8c8d;
+      margin: 0;
+      padding: 15px 0;
+      text-align: center;
+    }
+</style>
+<body>
+<header class="am-topbar am-topbar-inverse">
+  <h1 class="am-topbar-brand">
+    <a href="/">TinxXSS</a>
+  </h1>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+
+<div class="am-topbar-right">
+      <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm" onclick="window.location.href='{:U("Index/index/logut")}'">退出</button>
+    </div>
+    <div class="am-topbar-right">
+      <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">{$hash['email']}</button>
+    </div>
+	  
+  </div>
+</header>	
